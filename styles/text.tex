@@ -1,0 +1,57 @@
+\usepackage{fontspec}
+\usepackage{xunicode}
+\usepackage{xltxtra}
+\usepackage{pdfpages}
+\usepackage{titling}
+\usepackage{xltxtra}
+\usepackage{indentfirst} % Красная строка после заголовка
+\usepackage{enumerate}
+
+\defaultfontfeatures{Ligatures=TeX}
+\setmainfont{Times New Roman}
+\newfontfamily\cyrillicfont{Times New Roman}
+
+\renewcommand{\baselinestretch}{1.4} % Полуторный межстрочный интервал
+\parindent 1.25cm % Абзацный отступ
+
+\usepackage{titlesec}
+
+\titleformat{\section}
+  {\normalfont\fontsize{16}{18}\bfseries\clearpage}
+  {\thesection.}
+  {1em}
+  {}
+\titleformat{\subsection}
+  {\normalfont\fontsize{14}{16}\bfseries}
+  {\thesubsection.}
+  {1em}
+  {}
+\titleformat{\subsubsection}
+  {\normalfont\fontsize{12}{14}\bfseries}
+  {\thesubsubsection.}
+  {1em}
+  {}
+
+\titlespacing\section{0pt}{0pt}{12pt}
+\titlespacing\subsection{0pt}{24pt}{12pt}
+\titlespacing\subsubsection{0pt}{24pt}{12pt}
+
+% Оформление библиографии и подрисуночных записей через точку
+\makeatletter
+\renewcommand*{\@biblabel}[1]{\hfill#1.}
+\renewcommand*\l@section{\@dottedtocline{1}{1em}{1em}}
+\renewcommand{\thefigure}{\thesection.\arabic{figure}} % Формат рисунка секция.номер
+\renewcommand{\thetable}{\thesection.\arabic{table}} % Формат таблицы секция.номер
+\def\redeflsection{\def\l@section{\@dottedtocline{1}{0em}{10em}}}
+\makeatother
+
+\usepackage{tocloft}
+\renewcommand{\cftsecfont}{\hspace{0pt}}            % Имена секций в содержании не жирным шрифтом
+\renewcommand\cftsecleader{\cftdotfill{\cftdotsep}} % Точки для секций в содержании
+\renewcommand\cftsecpagefont{\mdseries}             % Номера страниц не жирные
+\setcounter{tocdepth}{3}                            % Глубина оглавления, до subsubsection
+
+\sloppy             % Избавляемся от переполнений
+\hyphenpenalty=1000 % Частота переносов
+\clubpenalty=10000  % Запрещаем разрыв страницы после первой строки абзаца
+\widowpenalty=10000 % Запрещаем разрыв страницы после последней строки абзаца

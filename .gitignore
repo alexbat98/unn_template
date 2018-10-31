@@ -1,0 +1,8 @@
+output/
+*.pdf
+*.aux
+*.log
+*.xdv
+*.toc
+*.fls
+*.fls_latexmk
