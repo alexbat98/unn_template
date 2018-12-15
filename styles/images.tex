@@ -1,13 +1,18 @@
 \usepackage{graphicx} % Вставка картинок и дополнений
+\usepackage{subcaption}
+\usepackage{cleveref}
+%\usepackage{subfigure}
 \graphicspath{{images/}}
 
 % Формат подрисуночных записей
+\let\counterwithout\relax
+\let\counterwithin\relax
 \usepackage{chngcntr}
 \counterwithin{figure}{section}
 
 % Формат подрисуночных надписей
 \RequirePackage{caption}
 \DeclareCaptionLabelSeparator{defffis}{ -- } % Разделитель
-\captionsetup[figure]{justification=centering, labelsep=defffis, format=plain} % Подпись рисунка по центру
+\captionsetup[figure]{justification=centering, labelsep=defffis, format=plain, labelfont=bf} % Подпись рисунка по центру
 \captionsetup[table]{justification=raggedright, labelsep=defffis, format=plain, singlelinecheck=false} % Подпись таблицы слева
 \addto\captionsrussian{\renewcommand{\figurename}{Рис.}} % Имя фигуры

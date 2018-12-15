@@ -6,6 +6,8 @@
 \usepackage{xltxtra}
 \usepackage{indentfirst} % Красная строка после заголовка
 \usepackage{enumerate}
+\usepackage{amsmath}
+\usepackage[perpage]{footmisc}
 
 \defaultfontfeatures{Ligatures=TeX}
 \setmainfont{Times New Roman}
@@ -17,7 +19,7 @@
 \usepackage{titlesec}
 
 \titleformat{\section}
-  {\normalfont\fontsize{16}{18}\bfseries\clearpage}
+  {\normalfont\fontsize{16}{18}\bfseries}
   {\thesection.}
   {1em}
   {}
@@ -55,3 +57,15 @@
 \hyphenpenalty=1000 % Частота переносов
 \clubpenalty=10000  % Запрещаем разрыв страницы после первой строки абзаца
 \widowpenalty=10000 % Запрещаем разрыв страницы после последней строки абзаца
+
+% Списки
+\usepackage{enumitem}
+\setlist[enumerate,itemize]{leftmargin=12.7mm} % Отступы в списках
+
+\makeatletter
+    \AddEnumerateCounter{\asbuk}{\@asbuk}{м)}
+\makeatother
+\setlist{nolistsep} % Нет отступов между пунктами списка
+\renewcommand{\labelitemi}{--} % Маркет списка --
+\renewcommand{\labelenumi}{\asbuk{enumi})} % Список второго уровня
+\renewcommand{\labelenumii}{\arabic{enumii})} % Список третьего уровня

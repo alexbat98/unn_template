@@ -1,4 +1,6 @@
 output/
+.vscode/
+.DS_Store
 *.pdf
 *.aux
 *.log

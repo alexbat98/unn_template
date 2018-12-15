@@ -1,5 +1,7 @@
 \documentclass[12pt,a4paper]{extarticle}
-\usepackage[russian]{babel}
+\usepackage{polyglossia}
+\setmainlanguage{russian}
+\setotherlanguage{english}
 \usepackage{setspace}
 
 \usepackage{geometry}
@@ -10,8 +12,12 @@
 
 \usepackage{hyphenat}
 
+\usepackage{hyperref}
+
 \input{./styles/text.tex}
 \input{./styles/source.tex}
+\input{./styles/images.tex}
+\input{./styles/bibliography.tex}
 
 \begin{document}
 
@@ -23,4 +29,6 @@
 
 % добавляйте материал здесь
 \input{src/intro.tex}
+
+\input{output/bibliography.tex}
 \end{document}
